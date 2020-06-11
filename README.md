@@ -12,6 +12,8 @@ A command line application and Python library for generating binary numbers for 
 ```make_binary_problems <number_of_bits: integer> <number_of_problems: integer>```
 
 ## TODO
+- add installation of ghostscript as a prereq
+  - brew install ghostscript or...?
 - use click to make it a proper CLI, now that there will be multiple options
 - make it produce printable sheets, probably as PDFs
   - add nice spacing for easy reading
