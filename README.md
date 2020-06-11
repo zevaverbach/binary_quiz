@@ -14,9 +14,13 @@ A command line application and Python library for generating binary numbers for 
 ## TODO
 - add installation of ghostscript as a prereq
   - brew install ghostscript or...?
+- add installation of enscript
 - use click to make it a proper CLI, now that there will be multiple options
 - make it produce printable sheets, probably as PDFs
   - add nice spacing for easy reading
+  - "enscript --columns=4 --output=file --no-header ~/tempfile.ps ~/tempfile.txt"
+  - "ps2pdf ~/tempfile.ps ~/problems_and_answers.pdf"
+
   - options
     - create_pdf
       - number of columns [auto]
