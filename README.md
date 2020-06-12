@@ -14,17 +14,13 @@ A command line application and Python library for generating binary numbers for 
 ```make_binary_problems <number_of_bits: integer> <number_of_problems: integer>```
 
 ## TODO
-- use click to make it a proper CLI, now that there will be multiple options
-- make it produce printable sheets, probably as PDFs
-  - add nice spacing for easy reading
-  - "enscript --columns=4 --output=file --no-header ~/tempfile.ps ~/tempfile.txt"
-  - "ps2pdf ~/tempfile.ps ~/problems_and_answers.pdf"
-
-  - options
-    - create_pdf
-      - number of columns [auto]
-      - font
-      - include column labels
+- add nice spacing for easy reading
+- pdf options
+  - problem numbers [true]
+  - number of columns [auto]
+  - font
+  - include column labels
+  - print
 
 ### Other Projects That Could Depend On This
 - do the problems online/on computer

@@ -1,19 +1,37 @@
 import sys
 
+import click
+from click import ClickException
+
 from app.generate import generate_answers, generate_problems
-from config import BEGIN_ANSWERS_TOKEN
+from app.config import BEGIN_ANSWERS_TOKEN
+from app.pdf import make_pdf
 
 
-def main():
-    if len(sys.argv) < 3:
-        print(
-            "please supply the number of bits and the number of exercises you'd like, "
-            "space-separated, like so:\n\n    $ binary 8 100\n"
+@click.command()
+@click.argument("bits", type=click.INT)
+@click.argument("num-problems", type=click.INT)
+@click.option("--pdf", default=False, is_flag=True)
+@click.option("--silent", default=False, is_flag=True)
+@click.option("--include-answers", default=True, is_flag=True)
+@click.option("--output-filepath")
+def main(
+    bits: int,
+    num_problems: int,
+    pdf: bool = False,
+    silent: bool = False,
+    include_answers: bool = True,
+    output_filepath: str = None,
+) -> None:
+
+    if pdf and silent:
+        raise ClickException(
+            "please specify either `pdf` or `silent`, not both (otherwise there "
+            "won't be any outcome of running the app!"
         )
-        sys.exit()
 
-    bits = int(sys.argv[1])
-    num_problems = int(sys.argv[2])
+    if pdf and output_filepath and not output_filepath.endswith("pdf"):
+        raise ClickException("Please include an output filepath ending in '.pdf'")
 
     problems = generate_problems(bits, num_problems)
     answers = generate_answers(problems)
@@ -23,5 +41,16 @@ def main():
         [f"{problem} | {answer} " for problem, answer in zip(problems, answers)]
     )
 
-    sys.stdout.write(BEGIN_ANSWERS_TOKEN.join((problems_string, answers_string)))
-    return problems_string, answers_string
+    if pdf:
+        make_pdf(
+            problems=problems_string,
+            answers=answers_string,
+            output_path=output_filepath or "problems.pdf",
+            include_answers=include_answers,
+        )
+
+    if not silent:
+        if include_answers:
+            click.echo(BEGIN_ANSWERS_TOKEN.join((problems_string, answers_string)))
+        else:
+            click.echo(problems_string)
