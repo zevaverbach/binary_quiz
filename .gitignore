@@ -1,5 +1,5 @@
 .idea/
-Pipfile.lock
+*.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
