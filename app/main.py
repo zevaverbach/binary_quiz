@@ -1,10 +1,8 @@
-import sys
-
 import click
 from click import ClickException
 
-from app.generate import generate_answers, generate_problems
 from app.config import BEGIN_ANSWERS_TOKEN
+from app.generate import generate_answers, generate_problems
 from app.pdf import make_pdf
 
 
@@ -24,6 +22,26 @@ def main(
     output_filepath: str = None,
 ) -> None:
 
+    validate_args(pdf, silent, output_filepath)
+
+    answers, problems = make_problems_and_answers(bits, num_problems)
+
+    if pdf:
+        make_pdf(
+            problems=problems,
+            answers=answers,
+            output_path=output_filepath or "problems.pdf",
+            include_answers=include_answers,
+        )
+
+    if not silent:
+        if include_answers:
+            click.echo(BEGIN_ANSWERS_TOKEN.join((problems, answers)))
+        else:
+            click.echo(problems)
+
+
+def validate_args(pdf, silent, output_filepath):
     if pdf and silent:
         raise ClickException(
             "please specify either `pdf` or `silent`, not both (otherwise there "
@@ -33,24 +51,12 @@ def main(
     if pdf and output_filepath and not output_filepath.endswith("pdf"):
         raise ClickException("Please include an output filepath ending in '.pdf'")
 
+
+def make_problems_and_answers(bits, num_problems):
     problems = generate_problems(bits, num_problems)
     answers = generate_answers(problems)
-
     problems_string = "\n\n".join(problems)
     answers_string = "\n\n".join(
         [f"{problem} | {answer} " for problem, answer in zip(problems, answers)]
     )
-
-    if pdf:
-        make_pdf(
-            problems=problems_string,
-            answers=answers_string,
-            output_path=output_filepath or "problems.pdf",
-            include_answers=include_answers,
-        )
-
-    if not silent:
-        if include_answers:
-            click.echo(BEGIN_ANSWERS_TOKEN.join((problems_string, answers_string)))
-        else:
-            click.echo(problems_string)
+    return answers_string, problems_string
