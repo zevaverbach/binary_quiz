@@ -7,14 +7,13 @@ A command line application and Python library for generating binary numbers for 
 ## Installation on MacOS or Linux
 1) `git clone https://github.com/Averbach-Transcription/email_quote`
 2) `ln -s <repo_fullpath>/app/get_quote /usr/local/bin/`
+3) brew install ghostscript ([install homebrew](https://brew.sh) if needed)
+4) brew install enscript
 
 ## Usage
 ```make_binary_problems <number_of_bits: integer> <number_of_problems: integer>```
 
 ## TODO
-- add installation of ghostscript as a prereq
-  - brew install ghostscript or...?
-- add installation of enscript
 - use click to make it a proper CLI, now that there will be multiple options
 - make it produce printable sheets, probably as PDFs
   - add nice spacing for easy reading
