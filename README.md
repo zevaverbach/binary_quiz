@@ -35,8 +35,8 @@ Options:
 
 👆👆 this command produces two PDFs like this 👇👇
 
-[![example of problems.pdf output](examples/problems.png)](https://github.com/zevaverbach/binary_quiz/examples/problems.pdf)
-[![example of problems-answers.pdf output](examples/problems-answers.png)](https://github.com/zevaverbach/binary_quiz/examples/problems-answers.pdf)
+[![example of problems.pdf output](examples/problems.png)](https://github.com/zevaverbach/binary_quiz/blob/master/examples/problems.pdf)
+[![example of problems-answers.pdf output](examples/problems-answers.png)](https://github.com/zevaverbach/binary_quiz/blob/master/examples/problems-answers.pdf)
 
 ## TODO
 - add nice spacing and typography for easy reading
