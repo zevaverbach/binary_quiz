@@ -29,9 +29,10 @@ Options:
 
 ```binary 8 100 --pdf```
 
-👆👆 this command produces 👇👇
+👆👆 this command produces two PDFs like this 👇👇
 
-![example of problems.pdf output](app/examples/problems.png)
+![example of problems.pdf output](examples/problems.png)
+![example of problems-answers.pdf output](examples/problems-answers.png)
 
 ## TODO
 - add nice spacing and typography for easy reading
