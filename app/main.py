@@ -28,6 +28,9 @@ def main(
 
     answers, problems = make_problems_and_answers(bits, num_problems)
 
+    if bits > 12:
+        num_columns = 3
+
     if pdf:
         make_pdf(
             problems=problems,
