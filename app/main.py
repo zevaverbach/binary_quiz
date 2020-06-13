@@ -13,6 +13,7 @@ from app.pdf import make_pdf
 @click.option("--silent", default=False, is_flag=True)
 @click.option("--include-answers", default=True, is_flag=True)
 @click.option("--output-filepath")
+@click.option("--num-columns", default=4)
 def main(
     bits: int,
     num_problems: int,
@@ -20,6 +21,7 @@ def main(
     silent: bool = False,
     include_answers: bool = True,
     output_filepath: str = None,
+    num_columns: int = 4,
 ) -> None:
 
     validate_args(pdf, silent, output_filepath)
@@ -32,6 +34,7 @@ def main(
             answers=answers,
             output_path=output_filepath or "problems.pdf",
             include_answers=include_answers,
+            num_columns=num_columns,
         )
 
     if not silent:
