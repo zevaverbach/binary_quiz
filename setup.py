@@ -10,6 +10,7 @@ setup(
     author_email="zev@averba.ch",
     version="0.1",
     license="MIT",
+    long_description_content_type="text/markdown",
     description=(
         "A command line application and Python library for generating binary numbers for "
         "a human to decode, as well as generating the integers they represent, to check "
