@@ -8,7 +8,7 @@ setup(
     name="binary_math_exercises",
     author="Zev Averbach",
     author_email="zev@averba.ch",
-    version="0.1",
+    version="0.1.1",
     license="MIT",
     long_description_content_type="text/markdown",
     description=(
