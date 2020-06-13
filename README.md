@@ -11,7 +11,17 @@ A command line application and Python library for generating binary numbers for 
 4) brew install enscript
 
 ## Usage
-```make_binary_problems <number_of_bits: integer> <number_of_problems: integer>```
+```
+binary [OPTIONS] BITS NUM_PROBLEMS
+
+Options:
+  --pdf
+  --silent
+  --include-answers
+  --output-filepath TEXT
+  --help                  Show this message and exit.
+
+```
 
 ## TODO
 - add nice spacing and typography for easy reading
