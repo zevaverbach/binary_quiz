@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="binary_math_exercises",
+    name="binary_quiz",
     author="Zev Averbach",
     author_email="zev@averba.ch",
-    version="0.1.1",
+    version="0.1",
     license="MIT",
     long_description_content_type="text/markdown",
     description=(

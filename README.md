@@ -1,4 +1,4 @@
-# Binary Math Exercises
+# Binary Quiz
 
 ## Description
 
@@ -9,10 +9,9 @@ A command line application and Python library for generating binary numbers for 
 Currently only supported on MacOS and Linux
 
 ## Installation on MacOS or Linux
-1) `git clone https://github.com/Averbach-Transcription/email_quote`
-2) `ln -s <repo_fullpath>/app/get_quote /usr/local/bin/`
-3) brew install ghostscript ([install homebrew](https://brew.sh) if needed)
-4) brew install enscript
+1) brew install ghostscript ([install homebrew](https://brew.sh) if needed)
+2) brew install enscript
+3) `pip install binary-quiz`
 
 ## Usage
 ```
@@ -32,7 +31,7 @@ Options:
 ### PDF
 
 ```shell
-binary 8 100 --pdf
+$ binary 8 100 --pdf
 ```
 
 👆👆 this command produces two PDFs like this 👇👇
