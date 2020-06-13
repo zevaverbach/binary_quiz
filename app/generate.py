@@ -3,7 +3,7 @@ import random
 from app.check import check
 
 
-def generate(bits=8):
+def generate(bits):
     return "".join([random.choice("10") for i in range(bits)])
 
 

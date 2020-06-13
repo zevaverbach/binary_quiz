@@ -9,8 +9,8 @@ A command line application and Python library for generating binary numbers for 
 Currently only supported on MacOS and Linux
 
 ## Installation on MacOS or Linux
-1) brew install ghostscript ([install homebrew](https://brew.sh) if needed)
-2) brew install enscript
+1) `brew install ghostscript` ([install homebrew](https://brew.sh) if needed)
+2) `brew install enscript`
 3) `pip install binary-quiz`
 
 ## Usage
@@ -444,20 +444,7 @@ $ binary 8 100 --pdf
 
 ```
 
-## TODO
-- add nice spacing and typography for easy reading
-- pdf options
-  - problem numbers [true]
-  - number of columns [auto]
-  - font
-  - include column labels
-  - print
-- addition
-- subtraction
-- mult? div?
-- hex?
-
-### Other Projects That Could Depend On This
+## Other Projects That Could Be Built Using This Package
 - do the problems online/on computer
 - a website to serve these up and let people use them for free
   - a web API that serves it, so people can do that programmatically
