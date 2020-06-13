@@ -12,7 +12,7 @@ setup(
     description=(
         "A command line application and Python library for generating binary numbers for "
         "a human to decode, as well as generating the integers they represent, to check "
-        "the human's work."
+        "the human's work. Also optionally outputs to PDF."
     ),
     long_description=long_description,
     packages=find_packages(),
