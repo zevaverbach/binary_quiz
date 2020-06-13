@@ -23,6 +23,20 @@ Options:
 
 ```
 
+## Examples of Output
+
+### PDF
+
+```binary 8 100 --pdf```
+
+👆👆 this command produces 👇👇
+
+<object data="https://github.com/zevaverbach/binary_quiz/examples/problems.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://github.com/zevaverbach/binary_quiz/examples/problems.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/zevaverbach/binary_quiz/examples/problems.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
 ## TODO
 - add nice spacing and typography for easy reading
 - pdf options
