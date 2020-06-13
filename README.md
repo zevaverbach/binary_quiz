@@ -31,9 +31,9 @@ Options:
 
 👆👆 this command produces 👇👇
 
-<object data="https://github.com/zevaverbach/binary_quiz/examples/problems.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/zevaverbach/binary_quiz/examples/problems.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/zevaverbach/binary_quiz/examples/problems.pdf">Download PDF</a>.</p>
+<object data="https://github.com/zevaverbach/binary_quiz/blob/master/app/examples/problems.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://github.com/zevaverbach/binary_quiz/blob/master/app/examples/problems.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/zevaverbach/binary_quiz/blob/master/app/examples/problems.pdf">Download PDF</a>.</p>
     </embed>
 </object>
 
