@@ -32,6 +32,7 @@ def main(
         num_columns = 3
 
     if pdf:
+        silent = True
         make_pdf(
             problems=problems,
             answers=answers,

@@ -1,4 +1,5 @@
 ## TODO
+- silent mode by default when doing PDF
 - add nice spacing and typography for easy reading
 - pdf options
   - problem numbers [true]
