@@ -17,7 +17,7 @@ setup(
         "the human's work. Also optionally outputs to PDF."
     ),
     long_description=long_description,
-    packages=find_packages(),
+    packages=["app"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
