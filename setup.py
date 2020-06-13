@@ -9,6 +9,7 @@ setup(
     author="Zev Averbach",
     author_email="zev@averba.ch",
     version="0.1",
+    license="MIT",
     description=(
         "A command line application and Python library for generating binary numbers for "
         "a human to decode, as well as generating the integers they represent, to check "

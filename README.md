@@ -4,6 +4,10 @@
 
 A command line application and Python library for generating binary numbers for a human to decode, as well as generating the integers they represent, to check the human's work.
 
+## Compatibility
+
+Currently only supported on MacOS and Linux
+
 ## Installation on MacOS or Linux
 1) `git clone https://github.com/Averbach-Transcription/email_quote`
 2) `ln -s <repo_fullpath>/app/get_quote /usr/local/bin/`
