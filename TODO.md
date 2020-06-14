@@ -4,7 +4,6 @@
 - pdf options
   - problem numbers [true]
   - number of columns [auto]
-  - font
   - include column labels
   - print
 - addition

@@ -11,6 +11,7 @@ def make_pdf(
     output_path: str,
     include_answers: bool,
     num_columns: int,
+    font_size: int,
 ) -> None:
     if include_answers:
         pdf_jobs = (("problems", problems), ("answers", answers))
@@ -22,7 +23,9 @@ def make_pdf(
             output_path = make_answers_path(output_path)
         with tempfile.NamedTemporaryFile(mode="w") as txt_file:
             write_to_txtfile(txt_file, text)
-            make_postscript_file(txt_file, num_columns)
+            make_postscript_file(
+                txt_file=txt_file, num_columns=num_columns, font_size=font_size
+            )
             make_pdf_file(output_path)
         os.unlink(POSTSCRIPT_FILEPATH)
 
@@ -43,6 +46,9 @@ def make_pdf_file(output_path):
     subprocess.call(command, shell=True)
 
 
-def make_postscript_file(txt_file, num_columns):
-    command = f"enscript --columns={num_columns} --no-header --output={POSTSCRIPT_FILEPATH} {txt_file.name}"
+def make_postscript_file(txt_file: str, num_columns: int, font_size: int):
+    command = (
+        f"enscript --columns={num_columns} --no-header --output={POSTSCRIPT_FILEPATH} "
+        f"-FCourier{font_size} {txt_file.name}"
+    )
     subprocess.call(command, shell=True)

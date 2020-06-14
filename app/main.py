@@ -14,6 +14,7 @@ from app.pdf import make_pdf
 @click.option("--include-answers", default=True, is_flag=True)
 @click.option("--output-filepath")
 @click.option("--num-columns", default=4)
+@click.option("--font-size", default=12)
 def main(
     bits: int,
     num_problems: int,
@@ -22,6 +23,7 @@ def main(
     include_answers: bool = True,
     output_filepath: str = None,
     num_columns: int = 4,
+    font_size: int = 12,
 ) -> None:
 
     validate_args(pdf, silent, output_filepath)
@@ -39,6 +41,7 @@ def main(
             output_path=output_filepath or "problems.pdf",
             include_answers=include_answers,
             num_columns=num_columns,
+            font_size=font_size,
         )
 
     if not silent:

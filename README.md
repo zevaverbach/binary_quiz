@@ -22,6 +22,8 @@ Options:
   --silent
   --include-answers
   --output-filepath TEXT
+  --num-columns INTEGER
+  --font-size INTEGER
   --help                  Show this message and exit.
 
 ```
