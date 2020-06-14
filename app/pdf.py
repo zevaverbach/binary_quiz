@@ -46,9 +46,9 @@ def make_pdf_file(output_path):
     subprocess.call(command, shell=True)
 
 
-def make_postscript_file(txt_file: str, num_columns: int, font_size: int):
+def make_postscript_file(txt_file, num_columns: int, font_size: int):
     command = (
-        f"enscript --columns={num_columns} --no-header --output={POSTSCRIPT_FILEPATH} "
-        f"-FCourier{font_size} {txt_file.name}"
+        f"enscript --columns={num_columns} --no-header --font=Courier{font_size} "
+        f"--output={POSTSCRIPT_FILEPATH} {txt_file.name}"
     )
     subprocess.call(command, shell=True)

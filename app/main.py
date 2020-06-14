@@ -13,8 +13,8 @@ from app.pdf import make_pdf
 @click.option("--silent", default=False, is_flag=True)
 @click.option("--include-answers", default=True, is_flag=True)
 @click.option("--output-filepath")
-@click.option("--num-columns", default=4)
-@click.option("--font-size", default=12)
+@click.option("--num-columns", default=1)
+@click.option("--font-size", default=26)
 def main(
     bits: int,
     num_problems: int,
@@ -22,16 +22,13 @@ def main(
     silent: bool = False,
     include_answers: bool = True,
     output_filepath: str = None,
-    num_columns: int = 4,
-    font_size: int = 12,
+    num_columns: int = 1,
+    font_size: int = 26,
 ) -> None:
 
     validate_args(pdf, silent, output_filepath)
 
     answers, problems = make_problems_and_answers(bits, num_problems)
-
-    if bits > 12:
-        num_columns = 3
 
     if pdf:
         silent = True
@@ -65,8 +62,13 @@ def validate_args(pdf, silent, output_filepath):
 def make_problems_and_answers(bits, num_problems):
     problems = generate_problems(bits, num_problems)
     answers = generate_answers(problems)
-    problems_string = "\n\n".join(problems)
+    problems_string = "\n\n".join(
+        [f"{index:2}) {p} =" for index, p in enumerate(problems, start=1)]
+    )
     answers_string = "\n\n".join(
-        [f"{problem} | {answer} " for problem, answer in zip(problems, answers)]
+        [
+            f"{index:2}) {problem} = {answer}"
+            for index, (problem, answer) in enumerate(zip(problems, answers), start=1)
+        ]
     )
     return answers_string, problems_string
